@@ -1,12 +1,10 @@
-x = 10
-y = 20
-print(x)
-print(y)
-
-
-user_name = "magician"
-points = 50
-live = 3
-print(user_name)
-print(points)
-print(live)
+print(5*5)
+print( 512 + 123)
+print(20 * 5)
+print(2 * 5)
+print(10 / 2 )
+print(123 + 100 )
+print(100-233)
+naame= (123)
+name= (1245)
+dato=(132)
