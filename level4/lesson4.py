@@ -22,4 +22,4 @@ hobbi = "GOA"
 country = "საქართველო"
 
 
-print(name + "" lastname + "" hobbi + "" country)
+print(name + " " lastname + " " hobbi + " " country)
