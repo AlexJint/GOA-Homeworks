@@ -15,6 +15,7 @@ print(5 * 7)
 print(5 * 7)
 
 
+
 name = "ალექსანდრე"
 lastname = "ჯინჭარაძე"
 hobbi = "GOA"
