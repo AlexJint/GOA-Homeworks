@@ -1,7 +1,23 @@
+print(10 * 10)
+print(25 + 14 )
+print(30 - 15 )
+print(100 / 4 )
 
 
-mum_age = input 
-
+print("ალექსანდრე")
+print("მირანდა")
+print("კარინა")
+print("ბორისი")
+print("ნინო")
+print("ალექსანდრე")
+print("მარიამი")
+print("დავითი")
+print("ვახტანგი")
+print("მარიამი")
+print("ანისია")
+print("ქეთო")
+print("ალექსანდრე")
+print("ბორისი")
 
 print(8)
 print(9)
