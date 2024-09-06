@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../.."
+		},
+		{
+			"path": "../../../../Downloads/Opera GX Installer.app"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "GOA programming projects"
+	}
+}
