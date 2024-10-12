@@ -1,0 +1,5 @@
+ button{
+    font-family: cursive;
+    text-transform: capitalize;
+    touch-action: cross-slide-x;
+}

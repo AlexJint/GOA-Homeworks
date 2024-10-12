@@ -1,12 +1,7 @@
-header {
-
+h1 {
     font-family:cursive;
     text-transform: capitalize;
-    text-decoration:line-through;
-    text-shadow: 10px 10px 1px rgb(255, 194, 102),10px
-    10px
-
-
-
-
+    text-shadow: 11px 27px 1px rgba(12, 0, 0, 0.274)
+    
+    
 }
