@@ -1,0 +1,5 @@
+div{
+
+    border: 2;
+    transition:cubic-bezier(1, 0, 0, 1);     
+}
