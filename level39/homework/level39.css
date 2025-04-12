@@ -1,3 +1,20 @@
-div{
-    color: #ffd000;
+h1{
+    color: rgb(255, 0, 0);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+
+}
+
+body{
+    border: 3px 4px 5px;
+    border-radius: 3px 4px 5px;
+    border-color:chocolate;
+    background-color: green;
+
+}
+
+button{
+    color: #00fff2;
+    
 }
