@@ -1,4 +1,9 @@
+body{
+    color: blue;
+}
+
 h1{
     color: brown;
+    font-family: f;
 
 }
