@@ -1,0 +1,1 @@
+alert("error 404 please reconect")
