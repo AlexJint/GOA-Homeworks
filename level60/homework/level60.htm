@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>4D Tesseract Game</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.min.js"></script>
+</head>
+<body>
+<script>
+let vertices = [];
+let edges = [];
+let angleXY = 0, angleXZ = 0, angleXW = 0;
+let pos = [0, 0, 0, 0]; // 4D position (x, y, z, w)
+let d3 = 5, d4 = 5; // 3D and 4D projection distances
+
+function setup() {
+  createCanvas(800, 600);
+  // Generate 16 vertices of a tesseract (all combinations of ±1 in 4D)
+  for (let x = -1; x <= 1; x += 2) {
+    for (let y = -1; y <= 1; y += 2) {
+      for (let z = -1; z <= 1; z += 2) {
+        for (let w = -1; w <= 1; w += 2) {
+          vertices.push([x, y, z, w]);
+        }
+      }
+    }
+  }
+  // Define edges: connect vertices differing in exactly one coordinate
+  for (let i = 0; i < vertices.length; i++) {
+    for (let j = i + 1; j < vertices.length; j++) {
+      let diff = 0;
+      for (let k = 0; k < 4; k++) {
+        if (vertices[i][k] !== vertices[j][k]) diff++;
+      }
+      if (diff === 1) edges.push([i, j]);
+    }
+  }
+}
+
+function draw() {
+  background(0);
+  translate(width / 2, height / 2);
+  scale(100); // Scale for visibility
+  stroke(255);
+  strokeWeight(0.02);
+
+  // Handle rotation inputs
+  if (keyIsDown(65)) angleXY += 0.02; // A: rotate XY plane
+  if (keyIsDown(68)) angleXY -= 0.02; // D: rotate XY plane
+  if (keyIsDown(87)) angleXZ += 0.02; // W: rotate XZ plane
+  if (keyIsDown(83)) angleXZ -= 0.02; // S: rotate XZ plane
+  if (keyIsDown(81)) angleXW += 0.02; // Q: rotate XW plane
+  if (keyIsDown(69)) angleXW -= 0.02; // E: rotate XW plane
+
+  // Handle translation inputs
+  if (keyIsDown(LEFT_ARROW)) pos[0] -= 0.05; // Left: move -X
+  if (keyIsDown(RIGHT_ARROW)) pos[0] += 0.05; // Right: move +X
+  if (keyIsDown(UP_ARROW)) pos[1] -= 0.05; // Up: move -Y
+  if (keyIsDown(DOWN_ARROW)) pos[1] += 0.05; // Down: move +Y
+  if (keyIsDown(90)) pos[2] -= 0.05; // Z: move -Z
+  if (keyIsDown(88)) pos[2] += 0.05; // X: move +Z
+  if (keyIsDown(67)) pos[3] -= 0.05; // C: move -W
+  if (keyIsDown(86)) pos[3] += 0.05; // V: move +W
+
+  // Project and draw vertices
+  let projected2D = [];
+  for (let v of vertices) {
+    // Translate vertex by position
+    let translated = v.map((val, i) => val + pos[i]);
+    // Rotate in 4D (simplified: XY, XZ, XW planes)
+    let rotated = [...translated];
+    // XY rotation
+    rotated[0] = translated[0] * cos(angleXY) - translated[1] * sin(angleXY);
+    rotated[1] = translated[0] * sin(angleXY) + translated[1] * cos(angleXY);
+    // XZ rotation
+    let tempX = rotated[0], tempZ = rotated[2];
+    rotated[0] = tempX * cos(angleXZ) - tempZ * sin(angleXZ);
+    rotated[2] = tempX * sin(angleXZ) + tempZ * cos(angleXZ);
+    // XW rotation
+    tempX = rotated[0];
+    let tempW = rotated[3];
+    rotated[0] = tempX * cos(angleXW) - tempW * sin(angleXW);
+    rotated[3] = tempX * sin(angleXW) + tempW * cos(angleXW);
+    // Project 4D to 3D
+    let w = rotated[3];
+    let f = d4 / (d4 - w);
+    let projected3D = [
+      rotated[0] * f,
+      rotated[1] * f,
+      rotated[2] * f
+    ];
+    // Project 3D to 2D
+    let z = projected3D[2];
+    f = d3 / (d3 - z);
+    let projected2DPoint = [
+      projected3D[0] * f,
+      projected3D[1] * f
+    ];
+    projected2D.push(projected2DPoint);
+  }
+
+  // Draw edges
+  for (let [i, j] of edges) {
+    line(projected2D[i][0], projected2D[i][1], projected2D[j][0], projected2D[j][1]);
+  }
+}
+</script>
+</body>
+</html>
