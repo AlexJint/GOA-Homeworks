@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+ <link rel="stylesheet" href="level71.css">
+ 
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen">
+  <div class="text-center mb-6">
+    <h1 class="text-2xl font-bold mb-4">DOM kube</h1>
+    <div id="box" class="box"></div>
+  </div>
+  <div class="flex space-x-4">
+    <div class="text-center">
+      <p class="mb-2 font-semibold">ზომის გაზრდა</p>
+      <button onclick="increaseSize()" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">გაზრდა</button>
+    </div>
+    <div class="text-center">
+      <p class="mb-2 font-semibold">ზომის შემცირება</p>
+      <button onclick="decreaseSize()" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">შემცირება</button>
+    </div>
+    <div class="text-center">
+      <p class="mb-2 font-semibold">ფერის შეცვლა</p>
+      <button onclick="changeColor()" class="bg-teal-600 text-white px-4 py-2 rounded hover:bg-teal-700">შეცვლა</button>
+    </div>
+  </div>
+
+  
+ <script src="level71.js"></script>
+</body>
+</html>

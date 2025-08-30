@@ -1,0 +1,21 @@
+.box {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+      margin: 20px auto;
+      transition: all 0.3s ease;
+    }
+    .large {
+      width: 300px;
+      height: 300px;
+    }
+    .small {
+      width: 100px;
+      height: 100px;
+    }
+    .red {
+      background-color: red;
+    }
+    .green {
+      background-color: green;
+    }
