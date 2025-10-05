@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Person Application</title>
+    <style>
+        body {
+            background-color: aqua;
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            min-height: 100px;
+        }
+        input {
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Person Management App</h1>
+    <div>
+        <input type="text" id="name" placeholder="სახელი">
+        <input type="number" id="age" placeholder="ასაკი">
+        <input type="text" id="city" placeholder="ქალაქი">
+        <input type="text" id="occupation" placeholder="პროფესია">
+    </div>
+    <button onclick="createPerson()">ობიექტის შექმნა</button>
+    <button onclick="showName()">სახელის ჩვენება</button>
+    <button onclick="showAge()">ასაკის ჩვენება</button>
+    <button onclick="showFullDescription()">სრული აღწერა</button>
+    <button onclick="updatePerson()">მონაცემების განახლება</button>
+    <div id="output">შედეგები გამოჩნდება აქ...</div>
+
+    <script>
+        class Person {
+            constructor(name, age, city, occupation) {
+                this._name = name;
+                this._age = age;
+                this._city = city;
+                this._occupation = occupation;
+            }
+
+            // Getter for name
+            get name() {
+                return this._name;
+            }
+
+            // Getter for age
+            get age() {
+                return this._age;
+            }
+
+            // Getter for full description
+            get fullDescription() {
+                return `სახელი: ${this._name}, ასაკი: ${this._age}, ქალაქი: ${this._city}, პროფესია: ${this._occupation}`;
+            }
+
+            // Setter for updating properties
+            set updateDetails({ name, age, city, occupation }) {
+                this._name = name || this._name;
+                this._age = age || this._age;
+                this._city = city || this._city;
+                this._occupation = occupation || this._occupation;
+            }
+        }
+
+        let person = null;
+
+        // Function to create a new Person object
+        function createPerson() {
+            const name = document.getElementById('name').value;
+            const age = parseInt(document.getElementById('age').value);
+            const city = document.getElementById('city').value;
+            const occupation = document.getElementById('occupation').value;
+
+            if (name && age && city && occupation) {
+                person = new Person(name, age, city, occupation);
+                document.getElementById('output').innerText = 'ობიექტი შეიქმნა!';
+            } else {
+                document.getElementById('output').innerText = 'გთხოვთ, შეავსოთ ყველა ველი!';
+            }
+        }
+
+        // Function to show name
+        function showName() {
+            if (person) {
+                document.getElementById('output').innerText = `სახელი: ${person.name}`;
+            } else {
+                document.getElementById('output').innerText = 'ჯერ შექმენით ობიექტი!';
+            }
+        }
+
+        // Function to show age
+        function showAge() {
+            if (person) {
+                document.getElementById('output').innerText = `ასაკი: ${person.age}`;
+            } else {
+                document.getElementById('output').innerText = 'ჯერ შექმენით ობიექტი!';
+            }
+        }
+
+        // Function to show full description
+        function showFullDescription() {
+            if (person) {
+                document.getElementById('output').innerText = person.fullDescription;
+            } else {
+                document.getElementById('output').innerText = 'ჯერ შექმენით ობიექტი!';
+            }
+        }
+
+        // Function to update person details
+        function updatePerson() {
+            if (person) {
+                const name = document.getElementById('name').value;
+                const age = parseInt(document.getElementById('age').value);
+                const city = document.getElementById('city').value;
+                const occupation = document.getElementById('occupation').value;
+
+                person.updateDetails = { name, age, city, occupation };
+                document.getElementById('output').innerText = 'მონაცემები განახლდა: ' + person.fullDescription;
+            } else {
+                document.getElementById('output').innerText = 'ჯერ შექმენით ობიექტი!';
+            }
+        }
+    </script>
+</body>
+</html>
