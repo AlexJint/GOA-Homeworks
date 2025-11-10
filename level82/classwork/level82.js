@@ -1,0 +1,1 @@
+alert("saclaso davaleba ar gvqonda")
