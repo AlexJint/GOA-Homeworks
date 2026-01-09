@@ -1,0 +1,1 @@
+print("kompiuteris gamo ver gavakeTe")

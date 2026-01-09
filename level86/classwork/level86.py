@@ -8,7 +8,7 @@ class book:
         print(vars(self). values())
 
 
-book1 = book("zxaprebi", "vaja fSavela", 120, 20  )
+book1 = book("zxaprebi", "iakob gogebasvili", 120, 20  )
 
 print(book1.title)
 print(book1.author)
