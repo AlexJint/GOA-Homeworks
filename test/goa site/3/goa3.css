@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(0, 195, 255);
+}
+
+h1{
+    color: rgb(72, 255, 0);
+}
+
+
+.SMKSSS{
+    width: 100vh;
+    height: 350px;
+}
+
+button{
+    border: 200px;
+    border-radius: 40px;
+    font-family:fantasy;
+    font-size: 40px;
+    width:180px;
+    height: 90px;
+    background-color: rgb(153, 255, 0);
+}

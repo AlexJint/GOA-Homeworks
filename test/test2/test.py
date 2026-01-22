@@ -31,14 +31,34 @@
 #     print(" nice language!")
 
 
-num = int(input("enter your number :"))
+# num = int(input("enter your number :"))
 
-if num >0 :
-    print("poditive")
+# if num >0 :
+#     print("poditive")
 
-elif num <0 :
-    print("negative")
+# elif num <0 :
+#     print("negative")
 
-else :
-    print("zero")
+# else :
+#     print("zero")
 
+
+# name = ["alexandre" , "luka" , "giorgi" , "amiko" , "saba" , "demetre"]
+
+
+
+
+# name = "alexandre jintcharadze"
+
+# print(name[10])
+
+
+
+# i = 10
+
+# while i >=1:
+#     print(i)
+#     i = i-1
+
+
+name = "alexandre"
