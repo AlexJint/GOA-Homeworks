@@ -21,7 +21,7 @@ book1.display_info()
 
 class Calculator:
     def add(self, a, b):
-        return a + b
+        return a + b 
 
     def subtract(self, a, b):
         return a - b
@@ -43,4 +43,5 @@ print("Subtract:", calc.subtract(10, 5))
 print("Multiply:", calc.multiply(10, 5))
 print("Divide:", calc.divide(10, 5))
 
+                                                       
 

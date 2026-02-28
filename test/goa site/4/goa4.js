@@ -1,1 +1,2 @@
 alert("WATCH THE VIDEO AND REGISTER")
+
