@@ -182,3 +182,19 @@
     border-right-color: var(--border);
   }
 }
+
+
+h1{
+  color: green;
+}
+
+button{
+  height: 250px;
+  width: 250px;
+}
+
+#react1{
+  width: 250px;
+  height: 250px;
+}
+

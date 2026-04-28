@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+* {
+    padding: 0px;
+    margin: 0px;
+
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+#parent {
+    justify-content: space-between;
+    font-family: Lexend Deca;
+    display: flex;
+    height: 450px;
+    width: 750px;
+
+}
+
+#Sedan {
+    padding: 25px;
+    background-color: hsl(31, 77%, 52%);
+    height: 450px;
+    width: 250px;
+
+}
+
+#Sedan button {
+    color: hsl(31, 77%, 52%);
+}
+
+
+#SuvS {
+    padding: 25px;
+    background-color: hsl(184, 100%, 22%);
+    height: 450px;
+    width: 250px;
+
+}
+
+#SuvS button {
+    color: hsl(184, 100%, 22%);
+}
+
+#Luxury {
+    gap: 15px;
+
+    padding: 25px;
+    background-color: hsl(179, 100%, 13%);
+    height: 450px;
+    width: 250px;
+
+}
+
+#Luxury button {
+    color: hsl(179, 100%, 13%);
+}
+
+.title {
+    color: white;
+}
+
+p {
+    color: hsla(0, 0%, 100%, 0.75);
+
+}
+
+button {
+    background-color: hsl(0, 0%, 95%);
+    height: 35px;
+    width: 150px;
+    border-radius: 25px;
+    border: none;
+
+
+}
